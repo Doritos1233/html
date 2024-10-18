@@ -72,6 +72,6 @@ body {
 }
 
 .custom-placeholder::placeholder {
-    color: #ffffff; /* Kolor placeholdera */
+    color: #ffffff;
     opacity: 1;
 }
