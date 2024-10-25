@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
-    padding: 0%;
-    margin: 0%;
+    padding: 0;
+    margin: 0;
 }
 
 :root {
@@ -20,8 +20,8 @@ body {
 }
 
 .login-container {
-    background: linear-gradient(210deg, #73befc, #42c9bb);
-    backdrop-filter: blur(10px);
+    background: linear-gradient(210deg, #50affd, #2ab4a6);
+    backdrop-filter: blur(500px);
     border-radius: 20px;
     padding: 40px;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -29,7 +29,37 @@ body {
     flex-direction: column;
     width: 300px;
     align-items: center;
-    border: 2px solid #8dd5ff;
+    border: 1px solid #8dd5ff;
+}
+
+.login-title {
+    position: relative;
+    margin: 20px 0;
+}
+
+.login-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -10px;
+    height: 2px;
+    background-color: white;
+}
+
+.password-title {
+    position: relative;
+    margin: 20px 0;
+}
+
+.password-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    height: 2px;
+    background-color: white;
 }
 
 .login-container input {
@@ -40,15 +70,29 @@ body {
     margin: 10px 0;
     color: rgb(255, 255, 255);
     font-size: 16px;
-    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.user-input {
+    padding-left: 30px; /* Odstęp dla ikony */
+}
+
+.user-input::before {
+    content: '\f007'; /* Kod Unicode dla ikony użytkownika */
+    font-family: 'Font Awesome 5 Free'; /* Upewnij się, że jest to odpowiednia czcionka */
+    position: absolute;
+    left: 10px; /* Pozycjonowanie ikony */
+    top: 50%; /* Wyśrodkowanie pionowe */
+    transform: translateY(-50%); /* Wyśrodkowanie ikonki */
+    color: white; /* Kolor ikony */
+    font-weight: 900; /* Grubość ikony */
+    font-size: 18px; /* Rozmiar ikony */
 }
 
 .login-container input:focus {
     outline: none;
     background-color: rgba(255, 255, 255, 0.13);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 
 .login-container button {
@@ -59,19 +103,67 @@ body {
     color: white;
     font-size: 16px;
     cursor: pointer;
-    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
+    transition: background-color 0.4s ease;
     margin-top: 20px;
     text-align: center;
     max-width: 70px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 
 .login-container button:hover {
-    background-color: rgba(255, 255, 255, 0.151);
+    background-color: rgba(199, 20, 20, 0.63);
 }
 
 .custom-placeholder::placeholder {
     color: #ffffff;
     opacity: 1;
+}
+
+.ball {
+    background: linear-gradient(to left,
+            var(--dark-color),
+            var(--light-color));
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    position: absolute;
+    left: 300px;
+    right: 400px;
+    animation: ball-move1 10s linear infinite;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.ball2 {
+    background: linear-gradient(to left,
+            var(--dark-color),
+            var(--light-color));
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0px;
+    right: 500px;
+    animation: ball-move 10s linear infinite;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes ball-move {
+    from {
+        transform: translateX(-400px);
+    }
+    to {
+        transform: translateX(2000px);
+    }
+}
+
+@keyframes ball-move1 {
+    from {
+        transform: translateY(-700px);
+    }
+    to {
+        transform: translateY(700px);
+    }
 }
