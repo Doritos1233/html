@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style2.css">
     <title>Login</title>
 </head>
+
 <body>
     <div class="login-container">
         <div class="input-group">
@@ -15,9 +17,16 @@
         <div class="input-group">
             <input type="password" placeholder="Password" class="custom-placeholder">
         </div>
-        <button>Login</button>
+        <button onclick="login()">Login</button>
     </div>
     <div class="ball"></div>
     <div class="ball2"></div>
+
+    <script>
+        function login() {
+            document.getAnimations("login")
+        }
+    </script>
 </body>
+
 </html>
