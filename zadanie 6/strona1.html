@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROSTE DZIAŁANIA</title>
+    <style>
+        body {
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            height: 100vh;
+        }
+
+        button,
+        h1 {
+            text-transform: uppercase;
+        }
+
+        .buttons {
+            border-bottom: 1px solid;
+        }
+
+        .margin {
+            margin: 10px;
+        }
+
+        .result {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>PROSTE DZIAŁANIA</h1>
+        <div class="margin">
+            <label for="a">podaj pierwszą liczbę</label>
+            <input id="a" type="number">
+        </div>
+        <div class="margin">
+            <label for="b">podaj drugą liczbę</label>
+            <input id="b" type="number">
+        </div>
+        <div class="buttons">
+            <button onclick="dodawanie()">dodawanie</button>
+            <button onclick="odejmowanie()">odejmowanie</button>
+            <button onclick="mnożenie()">mnożenie</button>
+            <button onclick="dzielenie()">dzielenie</button>
+        </div>
+        <div id="c" class="result"></div>
+        <div id="error" class="result"></div>
+        <div id="error404" class="result"></div>
+    </div>
+    <script>
+        function dodawanie() {
+            var a = document.getElementById('a').value;
+            var b = document.getElementById('b').value;
+            if (isnotFilled(a, b)) { return; }
+            var result = Number(a) + Number(b);
+            var resultContainer = document.getElementById('c');
+            resultContainer.innerText = "Wynik działania to: " + result;
+        }
+        function odejmowanie() {
+            var a = document.getElementById('a').value;
+            var b = document.getElementById('b').value;
+            if (isnotFilled(a, b)) { return; }
+            var result = Number(a) - Number(b);
+            var resultContainer = document.getElementById('c');
+            resultContainer.innerText = "Wynik działania to: " + result;
+
+        }
+        function mnożenie() {
+            var a = document.getElementById('a').value;
+            var b = document.getElementById('b').value;
+            if (isnotFilled(a, b)) { return; }
+            var result = Number(a) * Number(b);
+            var resultContainer = document.getElementById('c');
+            resultContainer.innerText = "Wynik działania to: " + result;
+        }
+        function dzielenie() {
+            var a = document.getElementById('a').value;
+            var b = document.getElementById('b').value;
+            if (isnotFilled(a, b)) { return; }
+            if (isZero(b)) { return; }
+            var result = Number(a) / Number(b);
+            var resultContainer = document.getElementById('c');
+            resultContainer.innerText = "Wynik działania to: " + result;
+        }
+
+        function isnotFilled(a, b) {
+            var errorContainer = document.getElementById('error');
+            errorContainer.innerText = '';
+            if (!a || !b) {
+                errorContainer.innerText = "Pole nie może być puste";
+
+                return true;
+            }
+            return false;
+        }
+
+        function isZero(b) {
+            var errorContainer = document.getElementById('error404');
+            errorContainer.innerText = '';
+            if (b == 0) {
+                errorContainer.innerText = "nie można dzielić przez 0";
+
+                return true;
+            }
+            return false;
+        }
+    </script>
+</body>
+
+</html>
