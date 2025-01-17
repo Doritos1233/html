@@ -12,19 +12,24 @@
 <body>
     <div class="login-container">
         <div class="input-group">
-            <input type="text" placeholder="User" class="custom-placeholder user-input">
+            <input type="text" placeholder="User" class="custom-placeholder user-input" id="a">
         </div>
         <div class="input-group">
-            <input type="password" placeholder="Password" class="custom-placeholder">
+            <input type="password" placeholder="Password" class="custom-placeholder" id="b">
         </div>
         <button onclick="login()">Login</button>
     </div>
     <div class="ball"></div>
     <div class="ball2"></div>
+    <div id="c" class="yyy"></div>
 
     <script>
         function login() {
-            document.getAnimations("login")
+            var a = document.getElementById('a').value;
+            var b = document.getElementById('b').value;
+            var result = a + " " + b;
+            var resultContainer = document.getElementById('c');
+            resultContainer.innerText = "zostales oscamowany na v-dolce dzieki za konto pozdro: " + result;
         }
     </script>
 </body>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16=10sys</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .centralny {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input id="a"></input>
+        <div class="centralny">
+            <button onclick="przeliczanie()">przelicz</button>
+        </div>
+        <div id="c" class="centralny"></div>
+    </div>
+
+    <script>
+        function przeliczanie() {
+            var a = document.getElementById('a').value;
+            var first;
+            var second;
+            if (a == "a") {
+                first = 10;
+            }
+            else if (a == "b") {
+                first = 11;
+            }
+            else if (a == "c") {
+                first = 12;
+            }
+            else if (a == "d") {
+                first = 13;
+            }
+            else if (a == "e") {
+                first = 14;
+            }
+            else if (a == "f") {
+                first = 15;
+            }
+            else if (Number(a)) {
+                first = a;
+            }
+            else {
+
+            }
+            if (a == "a") {
+                second = 10;
+            }
+            else if (a == "b") {
+                second = 11;
+            }
+            else if (a == "c") {
+                second = 12;
+            }
+            else if (a == "d") {
+                second = 13;
+            }
+            else if (a == "e") {
+                second = 14;
+            }
+            else if (a == "f") {
+                second = 15;
+            }
+            else if (Number(a)) {
+                second = a;
+            }
+            else {
+
+            }
+            second = second * 16;
+            first = first * 1;
+            var result = first + second;
+            var resultContainer = document.getElementById('c');
+            resultContainer.innerText = "wynik to: " + result;
+        }
+    </script>
+</body>
+
+</html>

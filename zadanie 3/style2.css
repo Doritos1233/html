@@ -150,6 +150,13 @@ body {
     z-index: 1;
 }
 
+.yyy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
 @keyframes ball-move {
     from {
         transform: translateX(-400px);
