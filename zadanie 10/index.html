@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zadanie 4</title>
+</head>
+
+<body>
+    <div>
+        <div>program sprawdzajacy najwieksza libcze i najmniejsza liczbe</div>
+        <div><input type="number" id="a"></div>
+        <div><input type="number" id="b"></div>
+        <div><input type="number" id="c"></div>
+        <div><button onclick="result()">oblicz</button></div>
+        <div id="wynik"></div>
+        <div id="error"></div>
+    </div>
+
+    <script>
+        function result() {
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            var c = document.getElementById("c").value;
+            if (isnotFilled(a, b)) { return; }
+
+            a = Number(a);
+            b = Number(b);
+            c = Number(c);
+
+            var resultContainer = document.getElementById('wynik')
+            resultContainer.innerText = "najmiejsza liczba to: " + najmniejsza(a, b, c) + " " + "najwieksza liczba to: " + najwieksza(a, b, c)
+        }
+
+        function isnotFilled(a, b, c) {
+            var errorContainer = document.getElementById('error');
+            errorContainer.innerText = '';
+            if (!a || !b) {
+                errorContainer.innerText = "Pole nie może być puste";
+
+                return true;
+            }
+            return false;
+        }
+
+        function najmniejsza(a, b, c) {
+            if (a < b && a < c) {
+                return a;
+            }
+            else if (b < a && b < c) {
+                return b;
+            }
+            else if (c < a && c < b) {
+                return c;
+            }
+        }
+
+        function najwieksza(a, b, c) {
+            if (a > b && a > c) {
+                return a;
+            }
+            else if (b > a && b > c) {
+                return b;
+            }
+            else if (c > a && c > b) {
+                return c;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

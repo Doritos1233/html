@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zadanie 2</title>
+</head>
+
+<body>
+    <div>
+        <div><h1>to ja przemożna Pytnia</h1></div>
+        <div><h3>zadaj mi w myslach pytanie , a ja odpowiem czy to o czym myslales sie spełni</h3></div>
+        <div><button onclick="sprawdz()">sprawdz</button></div>
+        <div id="a"></div>
+        <div id="error"></div>
+    </div>
+    
+    <script>
+        function sprawdz() {
+            var a = document.getElementById('a');
+            
+        }
+        
+        function isnotFilled(a, b) {
+            var errorContainer = document.getElementById('error');
+            errorContainer.innerText = '';
+            if (!a || !b) {
+                errorContainer.innerText = "Pole nie może być puste";
+
+                return true;
+            }
+            return false;
+        }
+    </script>
+</body>
+
+</html>

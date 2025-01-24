@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zadanie 1</title>
+</head>
+
+<body>
+    <div>
+        <div>program obliczajacy pole trojkata</div>
+        <div><input type="number" id="a"></div>
+        <div><input type="number" id="b"></div>
+        <div><input type="number" id="c"></div>
+        <div><button onclick="result()">oblicz</button></div>
+        <div id="wynik"></div>
+        <div id="error"></div>
+    </div>
+
+
+    <script>
+        function result() {
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            var c = document.getElementById("c").value;
+            if (isnotFilled(a, b)) { return; }
+            
+            a = Number(a);
+            b = Number(b);
+            c = Number(c);
+
+            var resultContainer = document.getElementById('wynik')     
+            resultContainer.innerText = "wynik to: " + calculator(a, b, c) 
+        }
+
+        function isnotFilled(a, b, c) {
+            var errorContainer = document.getElementById('error');
+            errorContainer.innerText = '';
+            if (!a || !b) {
+                errorContainer.innerText = "Pole nie może być puste";
+
+                return true;
+            }
+            return false;
+        }
+
+        function istriangle(a, b, c) {
+            if (!(a < b + c)) {
+                return false;
+            }
+            else if (!(b < a + c)) {
+                return false;
+            }
+            else if (!(c < a + b)) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+
+        function calculator(a, b, c) {
+            const p = (a + b + c) / 2;
+            const firststep = p * (p - a) * (p - b) * (p - c);
+            const area = Math.sqrt(firststep)
+            return area;
+        }
+    </script>
+</body>
+
+</html>
