@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    background-color: mintcream;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 160%;
+}
+
+.gora {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background-color: seagreen;
+}
+
+.stopka {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background-color: seagreen;
+
+}
+
+.srodek {
+    margin: 80px;
+}
+
+.lewy_blok {
+    width: 75%;
+}
+
+.prawy_blok {
+    width: 25%;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+.button2 {
+    padding: 15px;
+}
+
+.input {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.guzik {
+    padding-left: 400px;
+}
+
+.autor {
+    padding-right: 100px;
+}
+
+.image {
+    padding-right: 100px;
+}
+
+img {
+    box-shadow: 10px 5px 5px grey;
+}

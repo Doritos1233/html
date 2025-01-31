@@ -4,18 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styl3.css">
     <title>Zawody_wedkarskie</title>
 </head>
 
 <body>
-    <div class="wszystko">
+    <div >
         <div class="gora">
             <div class="lewy_blok">
-                <h1>Zawody polskich wędkarzy</h1>
+                <h1 style="color: white;">Zawody polskich wędkarzy</h1>
             </div>
-            <div class="prawy_blok">
-                <img src="zawody.jpg" alt="wędkowanie" class="obrazek">
+            <div class="prawy_blok image">
+                <img src="zawody.jpg" alt="wędkowanie">
             </div>
         </div>
         <div class="srodek">
@@ -30,33 +30,42 @@
             </div>
             <div>
                 <h3>Dodaj zawody wędkarskie</h3>
-                <div>
-                    <p>łowisko: </p>
-                    <input type="text">
+                <div class="input">
+                    <label for="a">łowisko: </label>
+                    <input type="text" id="a">
+                </div>
+                <div class="input">
+                    <label for="b">Data: </label>
+                    <input type="date" id="b">
+                </div>
+                <div class="input">
+                    <label for="c">sędzia: </label>
+                    <input type="text" id="c">
                 </div>
                 <div>
-                    <p>Data: </p>
-                    <input type="date">
-                </div>
-                <div>
-                    <p>sędzia: </p>
-                    <input type="text">
-                </div>
-                <div>
-                    <button>CZYŚĆ</button>
+                    <button onclick="czysc()">CZYŚĆ</button>
                     <button>DODAJ</button>
                 </div>
             </div>
         </div>
         <div class="stopka">
-            <div class="lewy_blok">
-                <button>Pobierz</button>
+            <div class="lewy_blok guzik">
+                <button class="button2"><a href="kwerendy.txt">Pobierz</a></button>
             </div>
-            <div class="prawy_blok">
-                <p>Autor: *********</p>
+            <div class="prawy_blok autor" style="color: white;">
+                <p>Autor: ************</p>
             </div>
         </div>
     </div>
 </body>
 
+<script>
+    function czysc() {
+    var a = document.getElementById('a').value = "";
+    var b = document.getElementById('b').value = "";
+    var c = document.getElementById('c').value = "";
+
+    
+}
+</script>
 </html>
