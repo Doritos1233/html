@@ -1,0 +1,86 @@
+<?php
+$server = "localhost";
+$username = "root";
+$password = "";
+$database = "baza";
+
+$connection = new mysqli($server, $username, $password, $database);
+
+if (!$connection) {
+  die($connection);
+}
+echo "Connected successfully";
+
+foreach ($_POST as $key => $value) {
+  echo $key, "; ", $value, " ";
+}
+
+$sql = "INSERT INTO rezerwacja (data, tel, osoby) VALUES ('$data', '$tel', '$osoby')";
+
+if (mysqli_query($connection, $sql)) {
+  echo "Rezerwacja została dodana poprawnie!";
+} else {
+  echo "Błąd: " . mysqli_error($connection);
+}
+
+mysqli_close($connection);
+
+
+
+?>
+
+
+
+
+// Sprawdzenie, czy dane nie są puste
+if (!$data || !$tel || !$osoby) {
+    die("Błąd: Wszystkie pola muszą być wypełnione.");
+}
+
+
+
+
+
+
+
+<?php
+$server = "localhost";
+$username = "root";
+$password = "";
+$database = "baza";
+
+$connection = new mysqli($server, $username, $password, $database);
+
+if ($connection->connect_error) {
+    die("Błąd połączenia: " . $connection->connect_error);
+}
+echo "Connected successfully <br>";
+
+$data = $_POST['data'] ?? null;
+$tel = $_POST['tel'] ?? null;
+$osoby = $_POST['osoby'] ?? null;
+
+// Przygotowanie zapytania SQL (bezpieczeństwo przed SQL Injection)
+$sql = "INSERT INTO rezerwacja (data, tel, osoby) VALUES (?, ?, ?)";
+$stmt = $connection->prepare($sql);
+
+if ($stmt) {
+    // Powiązanie parametrów
+    $stmt->bind_param("ssi", $data, $tel, $osoby);
+    
+    // Wykonanie zapytania
+    if ($stmt->execute()) {
+        echo "Rezerwacja została dodana poprawnie!";
+    } else {
+        echo "Błąd podczas dodawania rezerwacji: " . $stmt->error;
+    }
+
+    // Zamknięcie zapytania
+    $stmt->close();
+} else {
+    echo "Błąd przygotowania zapytania: " . $connection->error;
+}
+
+// Zamknięcie połączenia
+$connection->close();
+?>
