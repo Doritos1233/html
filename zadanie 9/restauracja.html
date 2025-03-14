@@ -31,32 +31,34 @@
                 <div>
                     <h3>Zarezerwuj stolik on-line</h3>
                 </div>
-                <div>
-                    <label for="a">Data (format: rrrr-mm-dd): </label>
-                </div>
-                <div>
-                    <input type="data" id="a">
-                </div>
-                <div>
-                    <label for="b">Ile osób?: </label>
-                </div>
-                <div>
-                    <input type="number" id="b">
-                </div>
-                <div>
-                    <label for="c">Twój numer telefonu: </label>
-                </div>
-                <div>
-                    <input type="number" id="c">
-                </div>
-                <div>
-                    <input type="checkbox" id="v" class="czekbox">
-                    <label for="v" class="czekbox">zgadzam sie na przetwarzanie moich danych osobowych</label>
-                </div>
-                <div>
-                    <button onclick="czysc()">WYCZYŚĆ</button>
-                    <button type="submit">REZERWUJ</button>
-                </div>
+                <form action="rezerwacja.php" method="post">
+                    <div>
+                        <label for="a">Data (format: rrrr-mm-dd): </label>
+                    </div>
+                    <div>
+                        <input type="date" name="data_rez" id="a" required>
+                    </div>
+                    <div>
+                        <label for="b">Ile osób?: </label>
+                    </div>
+                    <div>
+                        <input type="number" name="ile osob" id="b" required>
+                    </div>
+                    <div>
+                        <label for="c">Twój numer telefonu: </label>
+                    </div>
+                    <div>
+                        <input type="number" name="tel" id="c" required>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="v" class="czekbox">
+                        <label for="v" class="czekbox">zgadzam sie na przetwarzanie moich danych osobowych</label>
+                    </div>
+                    <div>
+                        <button onclick="czysc()">WYCZYŚĆ</button>
+                        <button type="submit">REZERWUJ</button>
+                    </div>
+                </form>
             </div>
         </div>
         <div class="stopka">
