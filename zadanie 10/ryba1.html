@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styl_1.css">
+</head>
+
+<body>
+    <div>
+        <div class="baner">
+            <h1>Portal dla wędkarzy</h1>
+        </div>
+        <div class="srodek">
+            <div class="lewy_blok">
+                <h3>Ryby zamieszkujące rzeki</h3>
+                <ol>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+                <div class="lewy_blok2">
+                    <h3>Ryby drapieżne naszych wód</h3>
+                    <table>
+                        <th class="td1">L.p.
+                        <td class="td1">Gatunek</td>
+                        <td class="td1">Występowanie</td>
+                        </th>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="prawy_blok">
+                <img src="ryba1.jpg" alt="ryba">
+                <a href="kwerendy.txt">Pobierz kwerendy</a>
+            </div>
+        </div>
+        <div class="stopka">
+            Strone wykonał: 0000000000
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
+$query1 = "SELECT id, nazwa FROM Ryby WHERE styl_zycia = 1;";
+$result1 = mysqli_query($connection, $query1);
+
+echo "<h3>Zapytanie 1: Ryby drapieżne</h3><ul>";
+while ($row = mysqli_fetch_assoc($result1)) {
+    echo "<li>{$row['id']} - {$row['nazwa']}</li>";
+}
+echo "</ul>";
+
+
+$query2 = "SELECT Ryby.id, Ryby.nazwa, Okres_ochronny.wymiar_ochronny 
+           FROM Ryby 
+           JOIN Okres_ochronny ON Ryby.id = Okres_ochronny.ryba_id 
+           WHERE Okres_ochronny.wymiar_ochronny > 30;";
+$result2 = mysqli_query($connection, $query2);
+
+echo "<h3>Zapytanie 2: Ryby z wymiarem ochronnym > 30 cm</h3><ul>";
+while ($row = mysqli_fetch_assoc($result2)) {
+    echo "<li>{$row['id']} - {$row['nazwa']} ({$row['wymiar_ochronny']} cm)</li>";
+}
+echo "</ul>";
+
+$query3 = "SELECT nazwa, akwen, wojewodztwo FROM Lowisko WHERE rodzaj = 3;";
+$result3 = mysqli_query($connection, $query3);
+
+echo "<h3>Zapytanie 3: Łowiska nad rzekami</h3><ul>";
+while ($row = mysqli_fetch_assoc($result3)) {
+    echo "<li>{$row['nazwa']} - {$row['akwen']} ({$row['wojewodztwo']})</li>";
+}
+echo "</ul>";
+
+$query4 = "ALTER TABLE Ryby ADD dobowy_limit TINYINT UNSIGNED;";
+if (mysqli_query($connection, $query4)) {
+    echo "<h3>Zapytanie 4: Dodano kolumnę dobowy_limit</h3>";
+} else {
+    echo "<h3>Błąd przy dodawaniu kolumny: " . mysqli_error($conn) . "</h3>";
+}

@@ -24,3 +24,5 @@ mysqli_query($connection, "INSERT INTO `rezerwacje`(`data_rez`, `liczba_osob`, `
 
 mysqli_close($connection);
 ?>
+
+$connection = new mysqli($server, $username, $password, $database);

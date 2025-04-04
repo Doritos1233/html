@@ -1,0 +1,13 @@
+kw1 - SELECT id, nazwa FROM Ryby WHERE styl_zycia = 1;
+
+
+kw2 - SELECT Ryby.id, Ryby.nazwa, Okres_ochronny.wymiar_ochronny 
+      FROM Ryby 
+      JOIN Okres_ochronny ON Ryby.id = Okres_ochronny.ryby_id 
+      WHERE Okres_ochronny.wymiar_ochronny > 30;
+
+kw3 - SELECT  ryby.nazwa, lowisko.akwen, lowisko.wojewodztwo FROM ryby JOIN lowisko ON ryby.id = lowisko.Ryby_id WHERE lowisko.rodzaj = 3
+
+
+kw4 - ALTER TABLE Ryby ADD dobowy_limit TINYINT UNSIGNED;
+
