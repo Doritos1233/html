@@ -1,38 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>zadanie 2</title>
+  <meta charset="UTF-8">
+  <title>Wyrocznia Delficka</title>
+  <style>
+    body {
+      font-family: "Georgia", serif;
+      background-color: #f0efe7;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      background-color: #4b0082;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #5d00a1;
+    }
+
+    #wynik {
+      margin-top: 30px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .czerwony { color: #d11a1a; }
+    .niebieski { color: #1a4ed1; }
+    .zielony { color: #1ab01a; }
+  </style>
 </head>
-
 <body>
-    <div>
-        <div><h1>to ja przemożna Pytnia</h1></div>
-        <div><h3>zadaj mi w myslach pytanie , a ja odpowiem czy to o czym myslales sie spełni</h3></div>
-        <div><button onclick="sprawdz()">sprawdz</button></div>
-        <div id="a"></div>
-        <div id="error"></div>
-    </div>
-    
-    <script>
-        function sprawdz() {
-            var a = document.getElementById('a');
-            
-        }
-        
-        function isnotFilled(a, b) {
-            var errorContainer = document.getElementById('error');
-            errorContainer.innerText = '';
-            if (!a || !b) {
-                errorContainer.innerText = "Pole nie może być puste";
 
-                return true;
-            }
-            return false;
-        }
-    </script>
+  <h1>To ja, przemożna Pytia – zadaj mi w myślach pytanie,<br> a ja odpowiem czy to o czym pomyślałeś się spełni</h1>
+
+  <button onclick="wyrocznia()">Sprawdź</button>
+
+  <div id="wynik"></div>
+
+  <script>
+    function wyrocznia() {
+      const procent = Math.floor(Math.random() * 100) + 1;
+      const wynikDiv = document.getElementById("wynik");
+
+      let kolor = "";
+      if (procent <= 33) {
+        kolor = "czerwony";
+      } else if (procent <= 66) {
+        kolor = "niebieski";
+      } else {
+        kolor = "zielony";
+      }
+
+      wynikDiv.className = kolor;
+      wynikDiv.textContent = `Prawdopodobieństwo, że tak będzie wynosi: ${procent}%`;
+    }
+  </script>
+
 </body>
-
 </html>

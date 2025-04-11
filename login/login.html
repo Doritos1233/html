@@ -10,18 +10,20 @@
 </head>
 
 <body>
-    <div class="login-container">
-        <div class="input-group">
-            <input type="text" placeholder="User" class="custom-placeholder user-input" id="a">
+    <form action="proces_login.php" method="post">
+        <div class="login-container">
+            <div class="input-group">
+                <input type="text" placeholder="User" name="login" class="custom-placeholder user-input" id="a">
+            </div>
+            <div class="input-group">
+                <input type="password" name="haslo" placeholder="Password" class="custom-placeholder" id="b">
+            </div>
+            <button type="submit" onclick="login()">Login</button>
         </div>
-        <div class="input-group">
-            <input type="password" placeholder="Password" class="custom-placeholder" id="b">
-        </div>
-        <button onclick="login()">Login</button>
-    </div>
-    <div class="ball"></div>
-    <div class="ball2"></div>
-    <div id="c" class="yyy"></div>
+        <div class="ball"></div>
+        <div class="ball2"></div>
+        <div id="c" class="yyy"></div>
+    </form>
 
     <script>
         function login() {
