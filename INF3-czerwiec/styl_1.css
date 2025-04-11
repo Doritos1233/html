@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.baner, .stopka {
+    background-color: #00838F;
+    color: white;
+    padding: 5px;
+    font-size: 130%;
+    text-align: center;
+}
+
+.lewy_blok, .lewy_blok2 {
+    background-color: #EFEFEF;
+    width: 55%;
+}
+
+.lewy_blok {
+    height: 150px;
+}
+
+.lewy_blok2 {
+    padding-top: 39px;
+    height: 300px;
+    position: absolute;
+    width: 54.51%;
+}
+
+.prawy_blok {
+    background-color: #4FB3BF;
+    width: 45%;
+    height: 450px;
+    text-align: center;
+}
+
+img {
+    height: 400px;
+    width: 400px;
+    box-shadow: 10 7 dimgray;
+    padding: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+}
+
+th, td {
+    border: 1px solid #4FB3BF;
+    padding: 4px;
+}
+
+tr:hover {
+    background-color: #4FB3BF;
+}
+
+.srodek {
+    display: flex;
+    justify-content: center;
+}
+
+.td1 {
+    text-align: center;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style2.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="input-group">
+            <input type="text" placeholder="User" class="custom-placeholder user-input" id="a">
+        </div>
+        <div class="input-group">
+            <input type="password" placeholder="Password" class="custom-placeholder" id="b">
+        </div>
+        <button onclick="login()">Login</button>
+    </div>
+    <div class="ball"></div>
+    <div class="ball2"></div>
+    <div id="c" class="yyy"></div>
+
+    <script>
+        function login() {
+            var a = document.getElementById('a').value;
+            var b = document.getElementById('b').value;
+            var result = a + " " + b;
+            var resultContainer = document.getElementById('c');
+            resultContainer.innerText = "zostales oscamowany na v-dolce dzieki za konto pozdro: " + result;
+        }
+    </script>
+</body>
+
+</html>

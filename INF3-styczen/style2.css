@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #F6E5DC;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 150%;
+}
+
+.baner {
+    background-color: #2F180C;
+    color: rgb(216, 149, 6);
+    height: 60px;
+    text-align: center;
+}
+
+.gora {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.lewy_blok {
+    width: 60%;
+}
+
+.prawy_blok {
+    width: 40%;
+    font-size: 150%;
+    padding: 70px;
+}
+
+.dol {
+    background-color: #D0B6A8;
+    padding: 30px;
+    
+}
+
+.dol_2 {
+    margin-left: 40vw;
+}
+
+.stopka {
+    background-color: #2F180C;
+    height: 60px;
+    font-family: khaki;
+    color: rgb(216, 149, 6);
+}
+
+.obraz {
+    height: 350px;
+}
+
+.czekbox {
+    margin: 10px; 
+}
+
+button {
+    margin: 10px;
+    padding: 20px;
+    background-color: #331505;
+    color: rgb(216, 149, 6);
+    font-size: 100%;
+}
+
+img {
+    box-shadow: 10px 5px 5px grey;
+}

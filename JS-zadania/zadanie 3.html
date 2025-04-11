@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zadanie 3</title>
+</head>
+
+<body>
+    <div>
+        <div>program zamieniajacy litery</div>
+        <div><input type="text" id="a"></div>
+        <div><input type="text" id="b"></div>
+        <div><button onclick="result()">zamien</button></div>
+        <div id="wynik"></div>
+        <div id="error"></div>
+    </div>
+
+
+    <script>
+        function result() {
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+            if (isnotFilled(a, b)) { return; }
+
+            var resultContainer = document.getElementById('wynik')
+            resultContainer.innerText = zamien(a, b)
+        }
+
+        function isnotFilled(a, b) {
+            var errorContainer = document.getElementById('error');
+            errorContainer.innerText = '';
+            if (!a || !b) {
+                errorContainer.innerText = "Pole nie może być puste";
+
+                return true;
+            }
+            return false;
+        }
+
+        function zamien(a, b) {
+            if (a[0] && b[0]) {
+                var newA = b.charAt(0) + a.substring(1);
+                var newB = a.charAt(0) + b.substring(1);
+                return newA + newB;
+            }
+        }
+    </script>
+</body>
+
+</html>
