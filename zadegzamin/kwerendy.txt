@@ -1,0 +1,2 @@
+zapytanie 1:
+SELECT `id`, `nazwa`, `wystepowanie` FROM `ryby` WHERE ryby.styl_zycia = 2

@@ -1,0 +1,51 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    font-family: Garamond;
+}
+
+.calosc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#gora {
+    background-color: #3CB371;
+    color: white;
+    padding: 10px;
+    font-size: 130%;
+    text-align: center;
+}
+
+#lewo {
+    background-color: #FAEBD7;
+    width: 55%;
+    height: 450px;
+    text-align: center;
+}
+
+#prawo {
+    background-color: #FAEBD7;
+    width: 45%;
+    height: 450px;
+    text-align: left;
+}
+
+
+#dol {
+    background-color: #3CB371;
+    color: white;
+    padding: 10px;
+    font-size: 130%;
+    text-align: center;
+}
+
+.image {
+    scale: 500px;
+    width: 500px;
+    padding: 3px;
+    margin: 15px;
+    border: 2px #3CB371;
+}
