@@ -75,19 +75,19 @@ body {
 }
 
 .user-input {
-    padding-left: 30px; /* Odstęp dla ikony */
+    padding-left: 30px;
 }
 
 .user-input::before {
-    content: '\f007'; /* Kod Unicode dla ikony użytkownika */
-    font-family: 'Font Awesome 5 Free'; /* Upewnij się, że jest to odpowiednia czcionka */
+    content: '\f007';
+    font-family: 'Font Awesome 5 Free';
     position: absolute;
-    left: 10px; /* Pozycjonowanie ikony */
-    top: 50%; /* Wyśrodkowanie pionowe */
-    transform: translateY(-50%); /* Wyśrodkowanie ikonki */
-    color: white; /* Kolor ikony */
-    font-weight: 900; /* Grubość ikony */
-    font-size: 18px; /* Rozmiar ikony */
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-weight: 900;
+    font-size: 18px;
 }
 
 .login-container input:focus {
@@ -151,16 +151,19 @@ body {
 }
 
 .yyy {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
+    animation: pojawienie 2s linear;
+    text-align: center;
+    height: 20px;
+    width: 300px;
+    color: white;
+    background-color: rgb(156, 10, 10);
 }
 
 @keyframes ball-move {
     from {
         transform: translateX(-400px);
     }
+
     to {
         transform: translateX(2000px);
     }
@@ -170,7 +173,26 @@ body {
     from {
         transform: translateY(-700px);
     }
+
     to {
         transform: translateY(700px);
+    }
+}
+
+@keyframes pojawienie {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
     }
 }

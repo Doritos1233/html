@@ -13,15 +13,19 @@ if (!$connection) {
 $login = $_POST["login"];
 $password = $_POST["haslo"];
 
-$queryResoult = mysqli_query($connection, "SELECT * FROM `user` WHERE user.login = '$login' AND user.haslo = '$password'");
+$Result = mysqli_query($connection, "SELECT * FROM `user` WHERE user.login = '$login' AND user.haslo = '$password'");
 
-mysqli_fetch_array($queryResoult);
-
-if (mysqli_num_rows($queryResoult) > 0) {
-    echo "Zalogowano pomyślnie.";
+if ($Result) {
+    $user = mysqli_num_rows($Result);
+    if ($user == 1) {
+        echo "siemano kolano $login.";
+    } else {
+        header('location: login.html?error=1');
+    }
 } else {
-    echo "Niepoprawny login lub hasło.";
+    header('location: login.html?error=1');
 }
+
 
 mysqli_close($connection);
 ?>

@@ -13,26 +13,26 @@
     <form action="proces_login.php" method="post">
         <div class="login-container">
             <div class="input-group">
-                <input type="text" placeholder="User" name="login" class="custom-placeholder user-input" id="a">
+                <input type="text" placeholder="User" name="login" class="custom-placeholder user-input" id="a" required>
             </div>
             <div class="input-group">
-                <input type="password" name="haslo" placeholder="Password" class="custom-placeholder" id="b">
+                <input type="password" name="haslo" placeholder="Password" class="custom-placeholder" id="b" required>
             </div>
-            <button type="submit" onclick="login()">Login</button>
+            <button type="submit">Login</button>
         </div>
         <div class="ball"></div>
         <div class="ball2"></div>
-        <div id="c" class="yyy"></div>
+        <div id="message" class="yyy">niepoprawne hasło lub login</div>
     </form>
 
     <script>
-        function login() {
-            var a = document.getElementById('a').value;
-            var b = document.getElementById('b').value;
-            var result = a + " " + b;
-            var resultContainer = document.getElementById('c');
-            resultContainer.innerText = "zostales oscamowany na v-dolce dzieki za konto pozdro: " + result;
-        }
+            var queryString = new URLSearchParams(window.location.search);
+            console.log(queryString.get('error'));
+            var message = document.getElementById("message");
+            message.style.display = "block"; 
+            setTimeout(function() {
+                message.style.display = "none";
+            }, 2000);
     </script>
 </body>
 
