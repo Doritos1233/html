@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Całodobowa stacja paliw</title>
+    <link rel="stylesheet" href="styl2.css">
+</head>
+
+<body>
+    <div class="baner">
+        <h1>Całodobowa stacja paliw</h1>
+    </div>
+
+    <div class="menu">
+        <a href="stacja.html"><img src="home.png" alt="home" class="obrazy"></a>
+        <a href="stacja.html"><img src="znak.png" alt="znak" class="obrazy"></a>
+        <a href="as.txt" download="as">Pobierz dokumenty</a>
+    </div>
+
+    <div class="glowny">
+        <div class="lewy">
+            <h2 class="pliaw">Orientacyjny koszt paliwa</h2>
+            <p>Rodzaj paliwa (1-benzyna, 2-olej napędowy):</p>
+            <input type="number" class="rodzaj"><br>
+            <p>Ile litrów?</p>
+            <input type="number" class="litry"><br><br>
+            <button onclick="obliczKoszt()">OBLICZ</button>
+            <p class="wynik"></p>
+        </div>
+
+        <div class="prawy">
+            <img src="samochod.png" alt="samochod" class="auto">
+        </div>
+    </div>
+
+    <div class="stopka">
+        Stronę opracował: 00000000000
+    </div>
+
+    <script>
+        function obliczKoszt() {
+            const rodzaj = parseInt(document.querySelector('.rodzaj').value);
+            const litry = parseFloat(document.querySelector('.litry').value);
+            let cena = 0;
+
+            if (rodzaj === 1) cena = 5.5;
+            else if (rodzaj === 2) cena = 6.2;
+            else {
+                document.querySelector('.wynik').textContent = "Niepoprawny rodzaj paliwa!";
+                return;
+            }
+
+            if (isNaN(litry) || litry <= 0) {
+                document.querySelector('.wynik').textContent = "Podaj poprawną liczbę litrów!";
+                return;
+            }
+
+            const koszt = (cena * litry).toFixed(2);
+            document.querySelector('.wynik').textContent = `Koszt paliwa: ${koszt} zł`;
+        }
+    </script>
+</body>
+
+</html>

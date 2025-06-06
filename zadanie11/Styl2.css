@@ -1,0 +1,119 @@
+* {
+    font-family: Cambria;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+}
+
+.baner, .stopka {
+    background-color: rgb(120, 0, 46);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.baner h1 {
+    font-size: 250%;
+}
+
+.menu {
+    background-color: rgb(173, 20, 87);
+    padding-left: 20px;
+    display: flex;
+    align-items: end;
+    gap: 70px;
+    font-size: 20px;
+}
+
+.menu a {
+    color: YellowGreen;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.glowny {
+    display: flex;
+    width: 100%;
+    height: 322px;
+}
+
+.lewy {
+    background-color: Snow;
+    color: OliveDrab;
+    width: 60%;
+    padding: 20px;
+    text-align: left;
+}
+
+.prawy {
+    background-color: rgb(173, 20, 87);
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auto {
+    margin: 40px;
+    padding: 10px;
+    width: 250px;
+    height: auto;
+}
+
+.auto:hover {
+    border: 1px dotted YellowGreen;
+}
+
+button {
+    padding: 5px 10px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.stopka {
+    text-align: center;
+    padding: 15px;
+}
+
+.obrazy {
+    width: 80px;
+    height: 80px;
+}
+
+.pliaw {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.lewy1 {
+    color: OliveDrab;
+    width: 60%;
+    height: 322px;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.tabela-godziny {
+    width: 90%;
+    color: OliveDrab;
+    margin-top: 10px;
+    background-color: snow;
+}
+
+.tabela-godziny, .tabela-godziny th, .tabela-godziny td {
+    border: 1px solid OliveDrab;
+    padding: 5px;
+    text-align: center;
+    background-color: snow;
+}
+
+.all {
+    display: flex;
+    justify-content: center;
+}
