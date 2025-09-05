@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, #bbbfcb, #005eff);
+    height: 100vh;
+}
+
+.login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, button {
+    border-radius: 5px;
+    padding: 10px;
+    z-index: 2;
+}
+
+button {
+    color: white;
+    background-color: #005eff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: black;
+    transition: 0,3 ease;
+}
+
+.ball {
+    margin-right: 70px;
+    z-index: -1;
+    height: 100px;
+    width: 100px;
+    background-color: black;
+    position: absolute;
+    border-radius: 50%;
+    animation: moveball 2s infinite alternate;
+}
+
+@keyframes moveball {
+    from {top: 0;}
+    to { top: calc(100vh - 100px); }
+}
