@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Clear</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	 <div class="container">
+			 <button id="firework-btn" type="button">Kliknij mnie</button>
+	 </div>
+	 <div id="scooby-gallery" style="display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin-top:32px;"></div>
+	 <script>
+	 const btn = document.getElementById('firework-btn');
+	 const container = document.querySelector('.container');
+	 const gallery = document.getElementById('scooby-gallery');
+	 function createFirework(x, y) {
+		 for (let i = 0; i < 16; i++) {
+			 const fw = document.createElement('div');
+			 fw.className = 'firework';
+			 const angle = (2 * Math.PI * i) / 16;
+			 const dist = 80 + Math.random() * 40;
+			 fw.style.left = x + 'px';
+			 fw.style.top = y + 'px';
+			 fw.style.setProperty('--x', `${Math.cos(angle) * dist}px`);
+			 fw.style.setProperty('--y', `${Math.sin(angle) * dist}px`);
+			 fw.style.background = `radial-gradient(circle, hsl(${Math.random()*360},100%,60%) 40%, transparent 100%)`;
+			 container.appendChild(fw);
+			 setTimeout(() => fw.remove(), 800);
+		 }
+	 }
+
+	 // Lista obrazków i gifów Scooby-Doo
+	 const scoobyImages = [
+		 'https://upload.wikimedia.org/wikipedia/en/5/5d/Scooby-Doo.png',
+		 'https://media.giphy.com/media/3o6ZtpxSZbQRRnwCKQ/giphy.gif',
+		 'https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif',
+		 'https://static.wikia.nocookie.net/scoobydoo/images/7/7e/Scooby-Doo_%28character%29.png',
+		 'https://media.giphy.com/media/3o6Zt8MgUuvSbkZYWc/giphy.gif',
+		 'https://media.giphy.com/media/3o6Zt6ML6BklcajjsA/giphy.gif',
+		 'https://static.wikia.nocookie.net/scoobydoo/images/2/2e/Scooby-Doo_Movie.png',
+	 ];
+
+	 function showScoobyImages() {
+		 // Wyczyść galerię
+		 gallery.innerHTML = '';
+		 // Wybierz 4 losowe obrazki/gify
+		 const shuffled = scoobyImages.sort(() => 0.5 - Math.random());
+		 const selected = shuffled.slice(0, 4);
+		 selected.forEach(src => {
+			 const img = document.createElement('img');
+			 img.src = src;
+			 img.alt = 'Scooby-Doo';
+			 img.style.maxWidth = '180px';
+			 img.style.maxHeight = '180px';
+			 img.style.borderRadius = '12px';
+			 img.style.boxShadow = '0 2px 12px rgba(0,0,0,0.18)';
+			 gallery.appendChild(img);
+		 });
+	 }
+
+	 btn.addEventListener('click', e => {
+		 const rect = btn.getBoundingClientRect();
+		 const x = rect.left + rect.width/2 - container.getBoundingClientRect().left;
+		 const y = rect.top + rect.height/2 - container.getBoundingClientRect().top;
+		 createFirework(x, y);
+		 showScoobyImages();
+	 });
+	 </script>
+</body>
+</html>
