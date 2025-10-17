@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Formularz rejestracyjny</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .formularz {
+      background: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 300px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select {
+      width: 100%;
+      padding: 7px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+    .przyciski {
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+    }
+    button {
+      padding: 8px 15px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .zielony { background: green; color: white; }
+    .czerwony { background: red; color: white; }
+  </style>
+</head>
+<body>
+  <div class="formularz">
+    <h3>Rejestracja</h3>
+    <form>
+      <label>Imię</label>
+      <input type="text" name="imie" required>
+
+      <label>Nazwisko</label>
+      <input type="text" name="nazwisko" required>
+
+      <label>Data urodzenia</label>
+      <select name="dzien">
+        <option>Dzień</option>
+      </select>
+      <select name="miesiac">
+        <option>Miesiąc</option>
+      </select>
+      <select name="rok">
+        <option>Rok</option>
+      </select>
+
+      <label>Płeć</label>
+      <input type="radio" name="plec" value="mężczyzna"> Mężczyzna
+      <input type="radio" name="plec" value="kobieta"> Kobieta
+
+      <label>Kraj</label>
+      <select name="kraj">
+        <option>Wybierz kraj</option>
+      </select>
+
+      <label>E-mail</label>
+      <input type="email" name="email" required>
+
+      <label>Telefon</label>
+      <input type="tel" name="telefon">
+
+      <label>Hasło</label>
+      <input type="password" name="haslo" required>
+
+      <label>Powtórz hasło</label>
+      <input type="password" name="haslo2" required>
+
+      <label>
+        <input type="checkbox" required> Akceptuję regulamin
+      </label>
+
+      <div class="przyciski">
+        <button type="submit" class="zielony">Prześlij</button>
+        <button type="reset" class="czerwony">Anuluj</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
