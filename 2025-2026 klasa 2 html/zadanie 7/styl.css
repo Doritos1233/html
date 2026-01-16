@@ -1,0 +1,70 @@
+:root {
+    --baner-color: #4A6572;
+    --panel-lewy-color: #88B04B;
+    --panel-prawy-color: #F0F8EA;
+    --stopka-color: #4A6572;
+    --hover-color: #4A6572;
+}
+
+.baner {
+    background-color: var(--baner-color);
+    height: 50px;
+    font-family: Arial;
+    text-align: center;
+}
+
+.panel-lewy {
+    background-color: var(--panel-lewy-color);
+    height: 600px;
+    width: 25%;
+    float: left;
+}
+
+.panel-prawy {
+    background-color: var(--panel-prawy-color);
+    height: 600px;
+    width: 75%;
+    text-align: center;
+    float: left;
+}
+
+.stopka {
+    background-color: var(--stopka-color);
+    font-family: Arial;
+    text-align: end;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input,
+.waga,
+.wzrost {
+    width: 150px;
+}
+
+table {
+    margin: 30px;
+    border: 1px solid black;
+    width: 80%;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 10px;
+    background-color: #88B04B;
+    border: 1px solid black;
+}
+
+td {
+    border: 1px solid black;
+}
+
+tr :hover {
+    background-color: var(--hover-color);
+    color: white;
+}
