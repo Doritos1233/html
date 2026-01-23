@@ -2,12 +2,16 @@ function randomNumber() {
   return Math.floor(Math.random() * 100);
 }
 
-function sortNumbers(Numbers) {
-  if (a < b) {
-    return -1;
-  } else if (a > b) {
-    return 1;
-  } else if (a === b) {
-    return 0;
+function number69() {
+  let random = Math.floor(Math.random() * 100);
+
+  if (random < 69) {
+    return random;
+  } else if (random >= 69) {
+    return "secretInput";
   }
+}
+
+function doWork() {
+  console.log("provde magic");
 }
