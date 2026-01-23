@@ -1,0 +1,86 @@
+:root {
+  --p-bg-color: #ffffff;
+  --top-stopka-bg-color: rgb(143, 112, 83);
+  --mid-bg-color: aliceblue;
+}
+
+.dark-mode{
+  background-color: #272727;
+  color: white;
+  --p-bg-color: #4e4e4e;
+  --top-stopka-bg-color: rgb(85, 66, 49);
+  --mid-bg-color: rgb(116, 123, 129);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+.top {
+  background-color: var(--top-stopka-bg-color);
+  display: flex;
+  justify-content: center;
+  column-gap: 10%;
+  padding: 10px;
+}
+
+.p1,
+.p2,
+.p3,
+button {
+  background-color: white;
+  padding: 10px;
+  border-radius: 999999px;
+  border: 1px, solid, white;
+  a {
+    color: rgb(143, 112, 83);
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+.p1:hover,
+.p2:hover,
+.p3:hover,
+button:hover {
+  color: white;
+  background-color: transparent;
+  a {
+    color: white;
+  }
+}
+
+.mid {
+  background-color: var(--mid-bg-color);
+  padding: 5px;
+}
+
+h2 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+table {
+  border: 1px, dashed, black;
+  width: 60%;
+  text-align: center;
+  margin-left: 50px;
+}
+
+ul {
+  padding-left: 100px;
+}
+
+.stopka {
+  background-color: var(--top-stopka-bg-color);
+  padding: 40px;
+  color: white;
+  text-align: center;
+}

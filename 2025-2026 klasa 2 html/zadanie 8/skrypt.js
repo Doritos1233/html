@@ -1,7 +1,6 @@
 let dark_mode = '';
 let button = document.getElementById("dark-mode");
 
-iuhiuhgiuhuh.ijoijoij = 7676767;
 
 button.addEventListener("click", function () {
   let mybody = document.getElementsByTagName('body')[0];
