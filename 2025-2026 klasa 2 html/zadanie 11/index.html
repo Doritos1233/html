@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="file" id="user-input" />
+    <script>
+      const input = document.getElementById("user-input");
+      input.addEventListener("change", function (event) {
+        const file = event.target.files[0];
+
+        if (file) {
+          console.log("Name: " + file.name);
+          console.log("Size: " + file.size);
+          console.log("Type: " + file.type);
+        }
+
+        const fileReader = new FileReader();
+
+        console.log("OnNothing " + fileReader.readyState);
+
+        fileReader.onloadstart = function () {
+          console.log("OnLoadStart " + fileReader.readyState);
+        };
+        fileReader.onprogress = function () {
+          console.log("OnProgress " + fileReader.readyState);
+        };
+        fileReader.onloadend = function () {
+          const rawData = new Uint8Array(fileReader.result);
+          const myData = Array.from(rawData).map(function(x) {
+            let temp = x.toString(2).padStart(8, 0)
+
+            return temp;
+          })
+          console.log(myData.join(' '));
+
+          console.log("OnLoaded " + fileReader.readyState);
+          console.log(fileReader.result);
+        };
+
+        fileReader.readAsArrayBuffer(file);
+
+        console.log(fileReader.result);
+      });
+    </script>
+  </body>
+</html>
