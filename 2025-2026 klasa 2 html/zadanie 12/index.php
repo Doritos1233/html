@@ -12,6 +12,10 @@
     <div class="glowny">
         <h1>Witryna internetowa</h1>
         <div class="boczny">
+            <img src="1.png" alt="pasek1">
+            <img src="2.png" alt="pasek2">
+            <img src="3.png" alt="pasek3">
+            <img src="4.png" alt="pasek4">
             <p id="skrypt_1"></p>
             <p><a href="https://opona.pl/"></a></p>
         </div>

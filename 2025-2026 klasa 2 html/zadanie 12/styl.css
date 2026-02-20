@@ -45,11 +45,17 @@
     border-radius: 30px;
 }
 
-img {
+.opona1 {
     height: 250px;
     width: 250px;
     padding: 20px;
     float: left;
+}
+
+.pasek {
+    border-radius: 20%;
+    width: 100%;
+    height: 150px;
 }
 
 h2 {

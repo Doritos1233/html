@@ -167,3 +167,13 @@ document.addEventListener('DOMContentLoaded', function () {
       //    console.log(sortedNumbers.toString()); // zadanie 3
       //    console.log(sortedNumbers.toString()); // zadanie 3
       //   let sortedNumbers = Numbers + sortNumbers() // zadanie 3
+
+
+
+
+                const rawData = new Uint8Array(fileReader.result);
+          const myData = Array.from(rawData).map(function(x) {
+            let temp = x.toString(2).padStart(8, 0)
+            x = x + 6
+
+            return temp;
