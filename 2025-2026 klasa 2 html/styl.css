@@ -1,0 +1,56 @@
+* {
+  font-family: Tahoma;
+  margin: 0;
+}
+
+.naglowek,
+.stopka {
+  background-color: maroon;
+  color: white;
+  padding: 40px;
+}
+
+.sekcja_lewa,
+.sekcja_prawa {
+  width: 80%;
+  height: 500px;
+  float: left;
+}
+
+.sekcja_lewa {
+  background-color: lightsalmon;
+}
+
+.sekcja_prawa {
+  background-color: darksalmon;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+table,
+tr {
+  border: solid, 1px, maroon;
+}
+
+table {
+  width: 85%;
+  margin: auto;
+}
+
+button {
+  background-color: maroon;
+  color: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+button:hover {
+  transition: 2s;
+  background: white;
+  color: maroon;
+}
