@@ -1,0 +1,69 @@
+* {
+  font-family: "Trebuchet MS";
+}
+
+.glowny {
+  text-align: center;
+}
+
+.boczny {
+  background-color: #c5cae9;
+  width: 40%;
+  height: 600px;
+  overflow: auto;
+  float: left;
+}
+
+.sekcja_1,
+.sekcja_2 {
+  width: 60%;
+  height: 300px;
+  float: left;
+}
+
+.sekcja_1 {
+  background-color: #9fa8da;
+}
+
+.sekcja_2 {
+  background-color: #7986cb;
+}
+
+footer {
+  background-color: #283593;
+  color: white;
+  padding: 20px;
+  display: flex;
+}
+
+img {
+  float: left;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin: 0px;
+  padding: 15px;
+}
+
+h3 {
+  background-color: #7986cb;
+  color: white;
+  font-size: 140%;
+}
+
+.opona {
+  text-align: left;
+  background-color: #9fa8da;
+  margin: 40px;
+  border: 2px dotted #283593;
+  border-radius: 30px;
+}
+
+.cena {
+  text-align: left;
+  background-color: #6982ff;
+  color: white;
+  width: 100%;
+}
