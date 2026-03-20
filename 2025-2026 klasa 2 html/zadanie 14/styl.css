@@ -1,69 +1,78 @@
 * {
-  font-family: "Trebuchet MS";
+  font-family: Garamond;
+  color: white;
 }
 
-.glowny {
+header {
+  background-color: indigo;
   text-align: center;
+  padding: 2px;
 }
 
-.boczny {
-  background-color: #c5cae9;
-  width: 40%;
+.lewa,
+.prawa {
+  background-color: indigo;
+  height: 600px;
+}
+
+.srodek {
+  background-color: black;
   height: 600px;
   overflow: auto;
-  float: left;
-}
-
-.sekcja_1,
-.sekcja_2 {
-  width: 60%;
-  height: 300px;
-  float: left;
-}
-
-.sekcja_1 {
-  background-color: #9fa8da;
-}
-
-.sekcja_2 {
-  background-color: #7986cb;
 }
 
 footer {
-  background-color: #283593;
-  color: white;
-  padding: 20px;
-  display: flex;
+  background-color: indigo;
+  height: 150px;
+  clear: both;
 }
 
-img {
-  float: left;
-  padding: 20px;
+.pkt {
+  background-color: tomato;
+  border-radius: 50%;
+  padding: 5px;
 }
 
-h2 {
+.gra {
+  display: inline-block;
   text-align: center;
-  margin: 0px;
-  padding: 15px;
+  padding: 3px;
 }
 
-h3 {
-  background-color: #7986cb;
-  color: white;
-  font-size: 140%;
+li {
+  padding: 5px;
 }
 
-.opona {
-  text-align: left;
-  background-color: #9fa8da;
-  margin: 40px;
-  border: 2px dotted #283593;
-  border-radius: 30px;
+input {
+  margin: 10px;
+  color: indigo;
 }
 
-.cena {
-  text-align: left;
-  background-color: #6982ff;
-  color: white;
-  width: 100%;
+button {
+  border-radius: 20px;
+}
+
+button:hover {
+  background-color: rgb(104, 51, 104);
+  transition: 1s;
+}
+
+@media screen and (min-width: 800px) {
+  .lewa,
+  .prawa {
+    width: 20%;
+    float: left;
+  }
+  .srodek {
+    width: 60%;
+    float: left;
+  }
+}
+
+@media screen and (max-width: 799px) {
+  .lewa,
+  .srodek,
+  .prawa {
+    width: 100%;
+  }
 }
