@@ -4,13 +4,12 @@ $username = "root";
 $password = "";
 $database = "zgloszenia";
 
-$connection = new mysqli($server, $username, $password, $database);
+$connection = mysqli_connect($server, $username, $password, $database);
 
 if (!$connection) {
-  die($connection);
+    die($connection);
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="pl">
 
@@ -28,10 +27,12 @@ if (!$connection) {
     <div class="glowny">
         <div class="sekcja_lewa">
             <h2>Personel</h2>
-            <form action="post">
-                <input type="checkbox" checked>
-                <input type="checkbox">
-                <button id="skrypt_1">Pokaż</button>
+            <form method="post">
+                <input type="radio" id="policjant" name="personel" value="policjant" checked>
+                <label for="policjant">Policjant</label>
+                <input type="radio" id="ratownik" name="personel" value="ratownik">
+                <label for="ratownik">Ratownik</label>
+                <button type="submit">Pokaż</button>
             </form>
             <table>
                 <tr>
@@ -39,19 +40,45 @@ if (!$connection) {
                     <th>Imię</th>
                     <th>Nazwisko</th>
                 </tr>
-                <td></tr>
-                <tr></tr>
-                <tr></tr>
+                <?php
+                $opcja = "policjant";
+                if (isset($_POST['personel'])) {
+                    $opcja = $_POST['personel'];
+                }
+                echo "<h3>Wybrano opcję: $opcja</h3>";
+
+                $query = "SELECT id, imie, nazwisko FROM personel WHERE status = '$opcja'";
+                $result = mysqli_query($connection, $query);
+
+                while ($row = mysqli_fetch_array($result)) {
+                    echo "<tr>";
+                    echo "<td>$row[id]</td>";
+                    echo "<td>$row[imie]</td>";
+                    echo "<td>$row[nazwisko]</td>";
+                    echo "</tr>";
+                }
+                ?>
             </table>
         </div>
         <div class="sekcja_prawa">
             <h2>Nowe zgloszenie</h2>
             <ol>
-                <p id="skrypt_2"></p>
+                <?php
+                $query = 'SELECT personel.`id`, personel.`nazwisko` FROM `personel` WHERE personel.id NOT IN (SELECT rejestr.id_personel FROM rejestr)';
+
+                $result = mysqli_query($connection, $query);
+                $wynik_zapytania = mysqli_query($connection, $query);
+                for ($i = 0; $i < mysqli_num_rows($wynik_zapytania); $i++) {
+                    // $dane = mysqli_fetch_row($wynik_zapytania);
+                    $dane = mysqli_fetch_array($wynik_zapytania);
+
+                    echo "<li>$dane[id] $dane[nazwisko] </li>";
+                }
+                ?>
             </ol>
-            <form action="post">
-                <p>wybierz id osoby z listy</p>
-                <input type="nunber">
+            <form method="post">
+                <p>wybierz id osoby z listy: </p>
+                <input type="number">
                 <button>Dodaj zgloszenie</button>
                 <p id="skrypt_3"></p>
             </form>
@@ -60,6 +87,9 @@ if (!$connection) {
     <div class="stopka">
         <p>Stronę wykonal: Doritos1233</p>
     </div>
+    <?php
+    mysqli_close($connection);
+    ?>
 </body>
 
 </html>
