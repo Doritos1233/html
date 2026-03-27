@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
   font-family: Tahoma;
   margin: 0;
@@ -76,3 +77,83 @@ td {
   border: solid, 1px, maroon;
 
 }
+=======
+* {
+  font-family: Tahoma;
+  margin: 0;
+}
+
+.naglowek,
+.stopka {
+  background-color: maroon;
+  color: white;
+  padding: 10px;
+}
+
+.sekcja_lewa,
+.sekcja_prawa {
+  width: 50%;
+  height: 500px;
+  float: left;
+}
+
+.sekcja_lewa {
+  background-color: lightsalmon;
+}
+
+.sekcja_prawa {
+  background-color: darksalmon;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+table,
+tr {
+  border: solid, 1px, maroon;
+}
+
+table {
+  width: 85%;
+  margin: auto;
+  border-collapse: collapse;
+}
+
+button {
+  background-color: maroon;
+  color: white;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+button:hover {
+  transition: 2s;
+  background: white;
+  color: maroon;
+}
+
+.stopka {
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+}
+
+form {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+ol {
+  list-style-type: none;
+}
+
+td {
+  border: solid, 1px, maroon;
+
+}
+>>>>>>> 1dd45523b45d5652d47db15093e62f50f2550991
