@@ -1,159 +1,69 @@
-<<<<<<< HEAD
 * {
-  font-family: Garamond;
-  color: white;
+  font-family: "Trebuchet MS";
 }
 
-header {
-  background-color: indigo;
+.glowny {
   text-align: center;
-  padding: 2px;
 }
 
-.lewa,
-.prawa {
-  background-color: indigo;
-  height: 600px;
-}
-
-.srodek {
-  background-color: black;
+.boczny {
+  background-color: #c5cae9;
+  width: 40%;
   height: 600px;
   overflow: auto;
+  float: left;
+}
+
+.sekcja_1,
+.sekcja_2 {
+  width: 60%;
+  height: 300px;
+  float: left;
+}
+
+.sekcja_1 {
+  background-color: #9fa8da;
+}
+
+.sekcja_2 {
+  background-color: #7986cb;
 }
 
 footer {
-  background-color: indigo;
-  height: 150px;
-  clear: both;
-}
-
-.pkt {
-  background-color: tomato;
-  border-radius: 50%;
-  padding: 5px;
-}
-
-.gra {
-  display: inline-block;
-  text-align: center;
-  padding: 3px;
-}
-
-li {
-  padding: 5px;
-}
-
-input {
-  margin: 10px;
-  color: indigo;
-}
-
-button {
-  border-radius: 20px;
-}
-
-button:hover {
-  background-color: rgb(104, 51, 104);
-  transition: 1s;
-}
-
-@media screen and (min-width: 800px) {
-  .lewa,
-  .prawa {
-    width: 20%;
-    float: left;
-  }
-  .srodek {
-    width: 60%;
-    float: left;
-  }
-}
-
-@media screen and (max-width: 799px) {
-  .lewa,
-  .srodek,
-  .prawa {
-    width: 100%;
-  }
-}
-=======
-* {
-  font-family: Garamond;
+  background-color: #283593;
   color: white;
+  padding: 20px;
+  display: flex;
 }
 
-header {
-  background-color: indigo;
+img {
+  float: left;
+  padding: 20px;
+}
+
+h2 {
   text-align: center;
-  padding: 2px;
+  margin: 0px;
+  padding: 15px;
 }
 
-.lewa,
-.prawa {
-  background-color: indigo;
-  height: 600px;
+h3 {
+  background-color: #7986cb;
+  color: white;
+  font-size: 140%;
 }
 
-.srodek {
-  background-color: black;
-  height: 600px;
-  overflow: auto;
+.opona {
+  text-align: left;
+  background-color: #9fa8da;
+  margin: 40px;
+  border: 2px dotted #283593;
+  border-radius: 30px;
 }
 
-footer {
-  background-color: indigo;
-  height: 150px;
-  clear: both;
+.cena {
+  text-align: left;
+  background-color: #6982ff;
+  color: white;
+  width: 100%;
 }
-
-.pkt {
-  background-color: tomato;
-  border-radius: 50%;
-  padding: 5px;
-}
-
-.gra {
-  display: inline-block;
-  text-align: center;
-  padding: 3px;
-}
-
-li {
-  padding: 5px;
-}
-
-input {
-  margin: 10px;
-  color: indigo;
-}
-
-button {
-  border-radius: 20px;
-}
-
-button:hover {
-  background-color: rgb(104, 51, 104);
-  transition: 1s;
-}
-
-@media screen and (min-width: 800px) {
-  .lewa,
-  .prawa {
-    width: 20%;
-    float: left;
-  }
-  .srodek {
-    width: 60%;
-    float: left;
-  }
-}
-
-@media screen and (max-width: 799px) {
-  .lewa,
-  .srodek,
-  .prawa {
-    width: 100%;
-  }
-}
->>>>>>> 1dd45523b45d5652d47db15093e62f50f2550991
