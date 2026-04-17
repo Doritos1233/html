@@ -22,6 +22,23 @@
         fwrite($file, $now . $_POST['text'] . "\n");
         fclose($file);
     }
+
+
+
+    if (file_exists("log.txt")) {
+        $file = fopen("log.txt", "r");
+        $content = fread($file, filesize("log.txt"));
+        $log = explode("\n", $content);
+        fclose($file);
+
+        for ($i = 0; $i < count($log); $i++) {
+            if (!empty($log[$i])) {
+                echo "<div style='border: 1px solid black; padding: 10px; margin: 5px;'>";
+                echo $log[$i];
+                echo "</div>";
+            }
+        }
+    }
     ?>
 </body>
 
