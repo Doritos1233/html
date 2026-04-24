@@ -1,0 +1,49 @@
+body {
+  font-family: Dancing Script;
+  font-size: 120%;
+  text-align: center;
+}
+
+.hed1,
+aside {
+  background-color: rosybrown;
+  width: 30%;
+}
+
+aside {
+  clear: both;
+  float: left;
+  text-align: left;
+  height: 350px;
+}
+
+.hed2 {
+  background-color: rosybrown;
+  width: 70%;
+  height: 100px;
+}
+
+section {
+  width: 70%;
+  height: 550px;
+  overflow: scroll;
+}
+
+label {
+  width: 50px;
+}
+
+.miniatury {
+  width: 150px;
+}
+
+.miniatury:hover {
+  background-color: bisque;
+  width: 200px;
+  transition: width 1s;
+}
+
+.hed1,
+.hed2 {
+  float: left;
+}

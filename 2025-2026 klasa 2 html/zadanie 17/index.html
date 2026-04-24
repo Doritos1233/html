@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tatuaże</title>
+    <link rel="stylesheet" href="czcionki/stylesheet.css">
+    <link rel="stylesheet" href="styl.css" />
+  </head>
+  <body>
+    <header class="hed1">
+      <img src="logo.png" alt="salon" />
+    </header>
+    <header class="hed2">
+      <h1>Studio Tatuażu</h1>
+    </header>
+    <aside>
+      <h3>Dodaj wzór</h3>
+      <label for="wzor">Wzór</label>
+      <input type="file" name="wzor" id="inp_wzor" />
+      <label for="kolor">Kolor</label>
+      <select id="sel_kolor">
+        <option value="wybierz">-- wybierz --</option>
+        <option value="Czarny">Czarny</option>
+        <option value="Czerwony">Czerwony</option>
+        <option value="Zielony">Zielony</option>
+        <option value="Niebieski">Niebieski</option>
+      </select>
+      <label for="cena">Cena</label>
+      <input type="number" name="cena" id="inp_cena" />
+      <button id="btn">Dodaj Wzór</button>
+    </aside>
+    <section>
+      <h2>Galeria</h2>
+      <img src="smok.png" alt="smok.png" class="miniatury" />
+      <img src="koliber.png" alt="koliber.png" class="miniatury" />
+    </section>
+    <footer>
+      <p>Autor strony: Doritos1233</p>
+    </footer>
+    <script src="skrypt.js"></script>
+  </body>
+</html>
+

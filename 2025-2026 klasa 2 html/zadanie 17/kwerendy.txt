@@ -1,0 +1,34 @@
+1.
+SELECT
+    wzor,
+    cena
+FROM
+    tatuaze
+WHERE
+    kolor = "czarny" AND cena > 100
+ORDER BY
+    cena
+DESC
+    ;
+
+2.
+SELECT
+    kolor,
+    COUNT(kolor) AS ile_kolorow
+FROM
+    tatuaze
+GROUP BY
+    kolor;
+
+3.
+SELECT
+    wzor,
+    style.nazwa
+FROM
+    tatuaze,
+    style
+WHERE
+    tatuaze.style_id = style.id AND kolor = "zielony";
+
+4.
+UPDATE tatuaze FROM studiotatuazu 
