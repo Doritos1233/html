@@ -1,0 +1,10 @@
+1.
+SELECT id, imie, nazwisko FROM personel WHERE status = "policjant";
+
+2.
+SELECT ty, COUNT(id) AS ilosc_pojazdow FROM pojazdy GROUP BY typ;
+
+3.
+
+4.
+INSERT INTO rejestr (id_personel, id_pojazd, data) VALUES (1, 14 CURRENT_DATE);
